@@ -16,7 +16,8 @@ import java.util.List;
  */
 @Entity
 @Data
-public class User implements Serializable {
+@Table(name="user")
+public class UserEntity{
 
     /**
      * ID 主键
@@ -32,32 +33,10 @@ public class User implements Serializable {
     private String username;
 
     /**
-     * 名称
-     */
-    private String name;
-
-    /**
      * 密码
      */
     private String password;
 
-    /**
-     * 加密密码的盐
-     */
-    private String salt;
-
-    /**
-     * 用户状态,0:创建未认证（比如没有激活，没有输入验证码等等）--等待验证的用户 , 1:正常状态,2：用户被锁定.
-     */
-    private byte state;
-
-    /**
-     * 角色
-     * 立即从数据库中进行加载数据;
-     */
-    @ManyToMany(fetch= FetchType.EAGER)
-    @JoinTable(name = "Role", joinColumns = { @JoinColumn(name = "uid") }, inverseJoinColumns ={@JoinColumn(name = "roleId") })
-    private List<Role> roleList;
 
     @CreatedDate
     private Date gmtCreate;
