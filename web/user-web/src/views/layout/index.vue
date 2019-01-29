@@ -1,17 +1,13 @@
 <template>
   <v-app>
-    <v-navigation-drawer app :mini-variant.sync="mini" v-model="drawer">
+    <v-navigation-drawer app clipped v-model="drawer" width="240" style="background-color:#EBEBEB">
       <side-menu/>
     </v-navigation-drawer>
-    <v-toolbar app>
+    <v-toolbar app clipped-left>
       <v-toolbar-side-icon @click="handleIconClick"/>
-      <v-toolbar-title>Title</v-toolbar-title>
+      <v-toolbar-title>UserWeb</v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-toolbar-items class="hidden-sm-and-down">
-        <v-btn flat>Link One</v-btn>
-        <v-btn flat>Link Two</v-btn>
-        <v-btn flat>Link Three</v-btn>
-      </v-toolbar-items>
+      <navbar/>
     </v-toolbar>
     <v-content>
       <v-container fluid>
@@ -24,20 +20,20 @@
 <script>
 // import { mapGetters } from 'vuex';
 import SideMenu from './Menu.vue';
+import Navbar from './Navbar.vue';
 
 export default {
   name: 'Layout',
   components: {
     SideMenu,
+    Navbar,
   },
   data() {
     return {
       drawer: true,
-      mini: false,
     };
   },
-  computed: {
-  },
+  computed: {},
   methods: {
     handleIconClick() {
       console.log(this.$vuetify.breakpoint);

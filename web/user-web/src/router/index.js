@@ -3,8 +3,8 @@ import Router from 'vue-router';
 import NProgress from 'nprogress'; // progress bar
 import 'nprogress/nprogress.css'; // progress bar style
 
-// import Layout from '@/views/layout/index.vue';
-import Dashboard from '@/views/dashboard/index.vue';
+import Layout from '@/views/layout/index.vue';
+// import Dashboard from '@/views/dashboard/index.vue';
 
 Vue.use(Router);
 
@@ -20,7 +20,15 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: Dashboard,
+    component: Layout,
+    redirect: '/dashboard',
+    children: [
+      {
+        path: '/dashboard',
+        name: 'dashboard',
+        component: () => import(/* webpackChunkName: "dashboard" */ '@/views/dashboard/index.vue'),
+      },
+    ],
   },
 ];
 
