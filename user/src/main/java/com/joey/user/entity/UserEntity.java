@@ -24,7 +24,7 @@ public class UserEntity{
      */
     @Id
     @GeneratedValue
-    private  Integer id;
+    private Integer id;
 
     /**
      * 账户
@@ -37,11 +37,5 @@ public class UserEntity{
      */
     private String password;
 
-
-    @CreatedDate
-    private Date gmtCreate;
-
-    @LastModifiedDate
-    private Date gmtModified;
 
 }
