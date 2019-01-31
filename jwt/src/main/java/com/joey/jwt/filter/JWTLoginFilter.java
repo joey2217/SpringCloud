@@ -5,6 +5,7 @@ import com.joey.jwt.constant.Constants;
 import com.joey.jwt.entity.UserEntity;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -68,6 +69,7 @@ public class JWTLoginFilter extends UsernamePasswordAuthenticationFilter {
      * @throws ServletException
      * 用户成功登录后，这个方法会被调用，我们在这个方法里生成token
      */
+    @ApiOperation(value = "自定义登录")
     @Override
     protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain, Authentication authResult) throws IOException, ServletException {
         // builder the token
