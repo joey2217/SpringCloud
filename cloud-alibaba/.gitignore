@@ -18,6 +18,10 @@ target/
 *.iws
 *.iml
 *.ipr
+.idea
+.mvn
+mvnw
+mvnw.cmd
 
 ### NetBeans ###
 /nbproject/private/
@@ -31,4 +35,3 @@ build/
 
 ### VS Code ###
 .vscode/
-.idea

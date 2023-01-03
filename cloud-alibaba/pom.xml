@@ -5,23 +5,26 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.0.1</version>
+        <version>2.7.5</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.joey</groupId>
     <artifactId>alibaba</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>${revision}</version>
     <name>cloud-alibaba</name>
     <description>cloud-alibaba</description>
     <packaging>pom</packaging>
 
     <modules>
         <module>web</module>
+        <module>user</module>
     </modules>
 
     <properties>
+        <revision>0.0.1</revision>
+        <project.version>0.0.1</project.version>
         <java.version>17</java.version>
-        <spring-cloud.version>2022.0.0</spring-cloud.version>
+        <spring-cloud.version>2021.0.5</spring-cloud.version>
         <spring-cloud-alibaba.version>2021.0.4.0</spring-cloud-alibaba.version>
     </properties>
 
